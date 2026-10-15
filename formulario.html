@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com o Mundo dos Esportes.">
+    <title>Formulário | Mundo dos Esportes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="topo">
+
+    <header class="cabecalho">
+        <div class="container">
+            <a class="logo" href="index.html">
+                Mundo dos <span>Esportes</span>
+            </a>
+            <p class="subtitulo">
+                Paixão e história você encontra aqui.
+            </p>
+        </div>
+    </header>
+
+    <nav class="menu" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="menu-lista">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="introducao.html">História</a></li>
+                <li><a href="futebol.html">Futebol</a></li>
+                <li><a href="basquete.html">Basquete</a></li>
+                <li><a href="volei.html">Vôlei</a></li>
+                <li><a href="cricket.html">Cricket</a></li>
+                <li><a href="copadomundo.html">Copa do Mundo</a></li>
+                <li><a href="fotos.html">Fotos</a></li>
+                <li><a href="videos.html">Vídeos</a></li>
+                <li><a href="tabela.html">Comparativos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="formulario.html" aria-current="page">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="formulario-banner">
+            <div class="container">
+                <p class="destaque">Sua opinião é importante</p>
+                <h1>Entre em contato</h1>
+                <p>
+                    Envie sua mensagem, compartilhe sua opinião
+                    ou conte qual é o seu esporte favorito.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-formulario">
+            <div class="container">
+
+                <div class="formulario-introducao">
+                    <h2>Fale conosco</h2>
+                    <p>
+                        Preencha os campos abaixo para deixar
+                        sua mensagem para o Mundo dos Esportes.
+                    </p>
+                    <p>Os campos marcados com * são obrigatórios.</p>
+                </div>
+
+                <form class="formulario-contato">
+
+                    <!-- Campo oculto -->
+                    <input
+                        type="hidden"
+                        id="origem"
+                        name="origem"
+                        value="Mundo dos Esportes">
+
+                    <h2>1. Dados pessoais</h2>
+
+                    <div class="campo-formulario">
+                        <label for="nome">Nome completo *</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            autocomplete="name"
+                            minlength="3"
+                            required>
+                        <small>Informe seu nome completo.</small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="email">E-mail *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemplo@email.com"
+                            autocomplete="email"
+                            required>
+                        <small>Digite um endereço de e-mail válido.</small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="senha">Senha de demonstração *</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Mínimo de 8 caracteres"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required>
+                        <small>Use pelo menos 8 caracteres. Não utilize uma senha real.</small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="telefone">Telefone celular *</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="Somente números com DDD"
+                            autocomplete="tel"
+                            pattern="[0-9]{10,11}"
+                            title="Digite 10 ou 11 números, incluindo o DDD."
+                            inputmode="numeric"
+                            required>
+                        <small>Exemplo: 35999998888.</small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="idade">Idade *</label>
+                        <input
+                            type="number"
+                            id="idade"
+                            name="idade"
+                            min="10"
+                            max="120"
+                            step="1"
+                            placeholder="Digite sua idade"
+                            required>
+                    </div>
+
+                    <h2>2. Preferências esportivas</h2>
+
+                    <div class="campo-formulario">
+                        <label for="assunto">Assunto *</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="elogio">Elogio</option>
+                            <option value="correcao">Correção de informação</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="esporte">Esporte favorito *</label>
+                        <input
+                            type="text"
+                            id="esporte"
+                            name="esporte"
+                            list="lista-esportes"
+                            placeholder="Digite ou selecione um esporte"
+                            required>
+
+                        <datalist id="lista-esportes">
+                            <option value="Futebol">
+                            <option value="Basquete">
+                            <option value="Vôlei">
+                            <option value="Cricket">
+                            <option value="Fórmula 1">
+                            <option value="Tênis">
+                            <option value="Rugby">
+                            <option value="Natação">
+                        </datalist>
+                    </div>
+
+                    <fieldset>
+                        <legend>Qual modalidade você acompanha mais? *</legend>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="radio"
+                                id="acompanha-campo"
+                                name="modalidade"
+                                value="campo"
+                                required>
+                            <label for="acompanha-campo">Esportes de campo</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="radio"
+                                id="acompanha-quadra"
+                                name="modalidade"
+                                value="quadra">
+                            <label for="acompanha-quadra">Esportes de quadra</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="radio"
+                                id="acompanha-motor"
+                                name="modalidade"
+                                value="motor">
+                            <label for="acompanha-motor">Esportes a motor</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="radio"
+                                id="acompanha-outros"
+                                name="modalidade"
+                                value="outros">
+                            <label for="acompanha-outros">Outras modalidades</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Quais conteúdos você gostaria de ver?</legend>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="checkbox"
+                                id="interesse-historia"
+                                name="interesses"
+                                value="historia">
+                            <label for="interesse-historia">História dos esportes</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="checkbox"
+                                id="interesse-regras"
+                                name="interesses"
+                                value="regras">
+                            <label for="interesse-regras">Regras e curiosidades</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="checkbox"
+                                id="interesse-competicoes"
+                                name="interesses"
+                                value="competicoes">
+                            <label for="interesse-competicoes">Competições e campeonatos</label>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <input
+                                type="checkbox"
+                                id="interesse-atletas"
+                                name="interesses"
+                                value="atletas">
+                            <label for="interesse-atletas">Atletas e equipes</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo-formulario">
+                        <label for="interesse">Quanto você gosta de esportes? (0 a 10)</label>
+                        <input
+                            type="range"
+                            id="interesse"
+                            name="interesse"
+                            min="0"
+                            max="10"
+                            step="1"
+                            value="7"
+                            aria-describedby="ajuda-interesse">
+                        <small id="ajuda-interesse">
+                            Valor inicial: 7 de 10. Ajuste a escala conforme sua preferência.
+                        </small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="cor">Escolha uma cor para representar seu esporte favorito</label>
+                        <input
+                            type="color"
+                            id="cor"
+                            name="cor"
+                            value="#00e676">
+                    </div>
+
+                    <h2>3. Datas e horários</h2>
+
+                    <div class="campo-formulario">
+                        <label for="data">Data de nascimento *</label>
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                            autocomplete="bday"
+                            required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="horario">Melhor horário para contato</label>
+                        <input
+                            type="time"
+                            id="horario"
+                            name="horario">
+                    </div>
+
+                    <h2>4. Arquivo e mensagem</h2>
+
+                    <div class="campo-formulario">
+                        <label for="arquivo">Envie fotos relacionadas ao esporte (opcional)</label>
+                        <input
+                            type="file"
+                            id="arquivo"
+                            name="arquivo"
+                            accept="image/*"
+                            multiple>
+                        <small>Você pode selecionar mais de uma imagem.</small>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="mensagem">Sua mensagem *</label>
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="6"
+                            minlength="10"
+                            maxlength="1000"
+                            placeholder="Escreva sua mensagem aqui..."
+                            required></textarea>
+                        <small>Escreva entre 10 e 1000 caracteres.</small>
+                    </div>
+
+                    <div class="botoes-formulario">
+                        <button type="submit" class="botao">
+                            Enviar mensagem
+                        </button>
+
+                        <button type="reset" class="botao botao-secundario">
+                            Limpar formulário
+                        </button>
+                    </div>
+
+                </form>
+
+                <p class="aviso-formulario">
+                    Este formulário é uma demonstração acadêmica.
+                    Ele não possui um sistema de processamento configurado.
+                    Portanto, os dados não são enviados para um e-mail
+                    nem armazenados pelo site.
+                </p>
+
+                <div class="sobre-convite">
+                    <h2>Explore o Mundo dos Esportes!</h2>
+                    <p>
+                        Navegue pelas páginas e descubra mais sobre
+                        as modalidades que movimentam o mundo.
+                    </p>
+                    <a href="index.html" class="botao">Voltar ao início</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <a class="logo" href="index.html">
+                Mundo dos <span>Esportes</span>
+            </a>
+            <p>Paixão e história em um só lugar.</p>
+            <p class="copyright">
+                &copy; 2026 Mundo dos Esportes.
+                Projeto de Programação Web I.
+            </p>
+        </div>
+    </footer>
+
+            <a href="#topo" class="voltar-topo" aria-label="Voltar para o topo da página">
+                ↑ <span>Voltar ao topo</span>
+            </a>
+
+</body>
+</html>
+

@@ -1,0 +1,3332 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --cor-fundo: #020305;
+    --cor-superficie: #040e1d;
+    --cor-superficie-clara: #054664;
+    --cor-laranja: #d17907;
+    --cor-laranja2: #f09309e8;
+    --cor-texto: #f1f5f9;
+    --cor-texto-secundario: #aab8c9;
+    --cor-borda: #29384c;
+    --cor-inicio: #d6da09;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destaque {
+    color: var(--cor-laranja);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+.cabecalho {
+    background-color: var(--cor-fundo);
+    padding: 25px 0;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--cor-laranja);
+}
+
+.subtitulo {
+    color: var(--cor-texto-secundario);
+    margin-top: 4px;
+}
+
+
+/* ========================================
+   3. MENU DE NAVEGAÇÃO
+======================================== */
+
+.menu {
+    background-color: var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.menu-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-lista a {
+    display: block;
+    padding: 14px 12px;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menu-lista a:hover,
+.menu-lista a:focus-visible,
+.menu-lista a[aria-current="page"] {
+    color: var(--cor-laranja);
+    background-color: var(--cor-superficie-clara);
+}
+
+
+/* ========================================
+   4. BANNER PRINCIPAL
+======================================== */
+
+.banner {
+    padding: 100px 0;
+    background:
+        radial-gradient(
+            ellipse at 85% 30%,
+            rgba(153, 107, 23, 0.863),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #111c2e,
+            #0b1120 70%
+        );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.banner-conteudo {
+    max-width: 1200px;
+}
+
+.banner h2 {
+    max-width: 700px;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin: 18px 0;
+}
+
+.banner-texto {
+    max-width: 600px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   5. BOTÃO
+======================================== */
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-laranja);
+    color: #000000;
+    padding: 13px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover,
+.botao:focus-visible {
+    background-color: var(--cor-laranja2);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   6. SEÇÃO DE MODALIDADES
+======================================== */
+
+.modalidades {
+    padding: 75px 0;
+}
+
+.titulo-secao {
+    margin-bottom: 35px;
+}
+
+.titulo-secao h2,
+.sobre-site h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 8px 0;
+}
+
+.titulo-secao > p:last-child {
+    color: var(--cor-texto-secundario);
+}
+
+
+/* ========================================
+   7. CARDS DOS ESPORTES
+======================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-laranja);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+.link-card {
+    color: var(--cor-laranja);
+    font-weight: bold;
+    display: inline-block;
+}
+
+.link-card:hover,
+.link-card:focus-visible {
+    color: #e4740c;
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   8. APRESENTAÇÃO DO SITE
+======================================== */
+
+.sobre-site {
+    padding: 70px 0;
+    background-color: var(--cor-superficie);
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.sobre-conteudo > div:last-child p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   9. RODAPÉ
+======================================== */
+
+.rodape {
+    padding: 35px 0;
+    text-align: center;
+    background-color: var(--cor-fundo);
+}
+
+.rodape .logo {
+    font-size: 1.5rem;
+}
+
+.rodape p {
+    color: var(--cor-texto-secundario);
+    margin-top: 8px;
+}
+
+.rodape .copyright {
+    font-size: 0.85rem;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+
+/* ========================================
+   10. RESPONSIVIDADE
+======================================== */
+
+/* Tablets e telas menores */
+
+@media (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-lista a {
+        padding: 12px 10px;
+    }
+}
+
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+    }
+
+    .cabecalho {
+        padding: 20px 0;
+    }
+
+    .logo {
+        font-size: 1.65rem;
+    }
+
+    .subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .menu-lista {
+        justify-content: flex-start;
+    }
+
+    .menu-lista a {
+        padding: 10px 9px;
+        font-size: 0.82rem;
+    }
+
+    .banner {
+        padding: 65px 0;
+    }
+
+    .banner h2 {
+        font-size: 2.5rem;
+    }
+
+    .banner-texto {
+        font-size: 1rem;
+    }
+
+    .modalidades,
+    .sobre-site {
+        padding: 45px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .sobre-conteudo {
+        gap: 15px;
+    }
+
+    .rodape {
+        padding: 30px 0;
+    }
+}
+
+
+/* Respeita a preferência por menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ========================================
+   PÁGINA: HISTÓRIA DOS ESPORTES
+======================================== */
+
+.pagina-intro {
+    padding: 65px 0 45px;
+}
+
+.pagina-intro h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin: 12px 0 20px;
+}
+
+.texto-intro {
+    max-width: 850px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.imagem-intro {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+}
+
+.conteudo-historia {
+    padding: 20px 0 70px;
+}
+
+.bloco-texto {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 22px;
+}
+
+.bloco-texto h2,
+.lista-curiosidades h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.bloco-texto h2 {
+    border-left: 4px solid var(--cor-laranja);
+    padding-left: 12px;
+}
+
+.bloco-texto p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.bloco-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.lista-curiosidades {
+    padding: 28px;
+    background-color: var(--cor-superficie-clara);
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+}
+
+.lista-curiosidades ul {
+    padding-left: 24px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-curiosidades li {
+    margin-bottom: 10px;
+}
+
+.lista-curiosidades li::marker {
+    color: var(--cor-laranja);
+}
+
+.voltar-inicio {
+    margin-top: 50px;
+    margin-left: 330px;
+}
+
+
+/* Ajustes para celulares */
+
+@media (max-width: 600px) {
+    .pagina-intro {
+        padding: 40px 0 30px;
+    }
+
+    .texto-intro {
+        font-size: 1rem;
+    }
+
+    .imagem-intro {
+        max-height: 260px;
+    }
+
+    .bloco-texto,
+    .lista-curiosidades {
+        padding: 20px;
+    }
+
+    .bloco-texto h2,
+    .lista-curiosidades h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ========================================
+   PÁGINA: Vôlei
+======================================== */
+
+.volei-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.volei-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.volei-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-volei {
+    padding: 55px 0 70px;
+}
+
+.artigo-volei {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-volei h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-volei p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-volei {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-volei li {
+    padding: 5px 0;
+}
+
+.lista-volei li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-volei {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-volei th,
+.tabela-volei td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-volei th {
+    color: var(--cor-laranja);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-volei td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-volei tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .volei-banner {
+        padding: 50px 0;
+    }
+
+    .secao-volei {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-volei {
+        padding: 20px;
+    }
+
+    .artigo-volei h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-volei th,
+    .tabela-volei td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+.volei-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.volei-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.volei-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-volei {
+    padding: 55px 0 70px;
+}
+
+.artigo-volei {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-volei h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-volei p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-volei {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-volei li {
+    padding: 5px 0;
+}
+
+.lista-volei li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-volei {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-volei th,
+.tabela-volei td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-volei th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-volei td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-volei tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .volei-banner {
+        padding: 50px 0;
+    }
+
+    .secao-volei {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-volei {
+        padding: 20px;
+    }
+
+    .artigo-volei h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-volei th,
+    .tabela-volei td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   PÁGINA: BASQUETE
+======================================== */
+
+.basquete-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.basquete-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.basquete-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-basquete {
+    padding: 55px 0 70px;
+}
+
+.artigo-basquete {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-basquete h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-basquete p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-basquete {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-basquete li {
+    padding: 5px 0;
+}
+
+.lista-basquete li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-basquete {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-basquete th,
+.tabela-basquete td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-basquete th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-basquete td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-basquete tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .basquete-banner {
+        padding: 50px 0;
+    }
+
+    .secao-basquete {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-basquete {
+        padding: 20px;
+    }
+
+    .artigo-basquete h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-basquete th,
+    .tabela-basquete td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+.basquete-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.basquete-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.basquete-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-basquete {
+    padding: 55px 0 70px;
+}
+
+.artigo-basquete {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-basquete h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-basquete p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-basquete {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-basquete li {
+    padding: 5px 0;
+}
+
+.lista-basquete li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-basquete {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-basquete th,
+.tabela-basquete td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-basquete th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-basquete td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-basquete tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .basquete-banner {
+        padding: 50px 0;
+    }
+
+    .secao-basquete {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-basquete {
+        padding: 20px;
+    }
+
+    .artigo-basquete h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-basquete th,
+    .tabela-basquete td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   PÁGINA: CRICKET
+======================================== */
+
+.cricket-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.cricket-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.cricket-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-cricket {
+    padding: 55px 0 70px;
+}
+
+.artigo-cricket {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-cricket h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-cricket p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-cricket {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-cricket li {
+    padding: 5px 0;
+}
+
+.lista-cricket li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-cricket {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-cricket th,
+.tabela-cricket td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-cricket th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-cricket td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-cricket tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cricket-banner {
+        padding: 50px 0;
+    }
+
+    .secao-cricket {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-cricket {
+        padding: 20px;
+    }
+
+    .artigo-cricket h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-cricket th,
+    .tabela-cricket td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cricket-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.cricket-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.cricket-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-cricket {
+    padding: 55px 0 70px;
+}
+
+.artigo-cricket {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-cricket h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-cricket p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-cricket {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-cricket li {
+    padding: 5px 0;
+}
+
+.lista-cricket li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-cricket {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-cricket th,
+.tabela-cricket td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-cricket th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-cricket td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-cricket tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cricket-banner {
+        padding: 50px 0;
+    }
+
+    .secao-cricket {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-cricket {
+        padding: 20px;
+    }
+
+    .artigo-cricket h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-cricket th,
+    .tabela-cricket td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   PÁGINA: Futebol
+======================================== */
+
+.futebol-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.futebol-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.futebol-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-futebol {
+    padding: 55px 0 70px;
+}
+
+.artigo-futebol {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-futebol h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-futebol p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-futebol {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-futebol li {
+    padding: 5px 0;
+}
+
+.lista-futebol li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-futebol {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-futebol th,
+.tabela-futebol td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-futebol th {
+    color: var(--cor-laranja);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-futebol td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-futebol tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .futebol-banner {
+        padding: 50px 0;
+    }
+
+    .secao-futebol {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-futebol {
+        padding: 20px;
+    }
+
+    .artigo-futebol h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-futebol th,
+    .tabela-futebol td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+.futebol-banner {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 230, 118, 0.12),
+            transparent 65%
+        ),
+        var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.futebol-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 10px 0;
+}
+
+.futebol-banner p:last-child {
+    max-width: 700px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.secao-futebol {
+    padding: 55px 0 70px;
+}
+
+.artigo-futebol {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.artigo-futebol h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--cor-laranja);
+}
+
+.artigo-futebol p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 14px;
+}
+
+.lista-futebol {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-futebol li {
+    padding: 5px 0;
+}
+
+.lista-futebol li::marker {
+    color: var(--cor-laranja);
+}
+
+/* Tabela de posições */
+
+.tabela-responsiva {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabela-futebol {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-futebol th,
+.tabela-futebol td {
+    padding: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+.tabela-futebol th {
+    color: var(--cor-verde);
+    background-color: var(--cor-superficie-clara);
+}
+
+.tabela-futebol td {
+    color: var(--cor-texto-secundario);
+}
+
+.tabela-futebol tbody tr:nth-child(even) {
+    background-color: var(--cor-superficie-clara);
+}
+
+/* Competições */
+
+.competicoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.competicao {
+    background-color: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.competicao h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 10px;
+}
+
+.competicao p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .competicoes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .futebol-banner {
+        padding: 50px 0;
+    }
+
+    .secao-futebol {
+        padding: 35px 0 50px;
+    }
+
+    .artigo-futebol {
+        padding: 20px;
+    }
+
+    .artigo-futebol h2 {
+        font-size: 1.3rem;
+    }
+
+    .tabela-futebol th,
+    .tabela-futebol td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Área que organiza os cards dos times */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+/* Card individual */
+.card-time {
+    background-color: #050f20;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Imagem do time */
+.card-time img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteúdo abaixo da imagem */
+.card-time-conteudo {
+    padding: 20px;
+}
+
+.card-time h2 {
+    color: #f1f5f9;
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.card-time p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Link do card */
+.card-time a {
+    color: #ff9500;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-time a:hover {
+    color: #e67b00;
+}
+
+/* Efeito ao passar o mouse */
+.card-time:hover {
+    transform: translateY(-5px);
+    border-color: #e68200;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .times {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==============================
+   PÁGINA DE FOTOS
+============================== */
+
+.fotos-banner {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--cor-superficie),
+        var(--cor-fundo)
+    );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.fotos-banner h1 {
+    margin: 15px 0;
+    color: var(--cor-verde);
+    font-size: 2.8rem;
+}
+
+.fotos-banner p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.fotos-banner .destaque {
+    color: var(--cor-verde);
+    font-weight: bold;
+}
+
+.secao-fotos {
+    padding: 50px 0;
+}
+
+.secao-fotos .titulo-secao {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.secao-fotos .titulo-secao h2 {
+    margin-bottom: 10px;
+    color: var(--cor-verde);
+    font-size: 2rem;
+}
+
+.secao-fotos .titulo-secao p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.foto-item {
+    margin: 0;
+    overflow: hidden;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.foto-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-verde);
+}
+
+.foto-item img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.foto-item figcaption {
+    padding: 20px;
+}
+
+.foto-item h3 {
+    margin: 0 0 10px;
+    color: var(--cor-verde);
+    font-size: 1.3rem;
+}
+
+.foto-item p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+.secao-fotos .voltar-inicio {
+    margin-top: 35px;
+    text-align: center;
+}
+
+/* Adaptação para tablets */
+
+@media (max-width: 900px) {
+    .galeria-fotos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptação para celulares */
+
+@media (max-width: 600px) {
+    .fotos-banner {
+        padding: 45px 15px;
+    }
+
+    .fotos-banner h1 {
+        font-size: 2rem;
+    }
+
+    .secao-fotos {
+        padding: 35px 0;
+    }
+
+    .galeria-fotos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .foto-item img {
+        height: 230px;
+    }
+}
+
+
+/* ==============================
+   PÁGINA DE VÍDEOS
+============================== */
+
+.videos-banner {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--cor-superficie),
+        var(--cor-fundo)
+    );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.videos-banner h1 {
+    margin: 15px 0;
+    color: var(--cor-verde);
+    font-size: 2.8rem;
+}
+
+.videos-banner p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.videos-banner .destaque {
+    color: var(--cor-verde);
+    font-weight: bold;
+}
+
+.secao-videos {
+    padding: 50px 0;
+}
+
+.secao-videos .titulo-secao {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.secao-videos .titulo-secao h2 {
+    margin-bottom: 10px;
+    color: var(--cor-verde);
+    font-size: 2rem;
+}
+
+.secao-videos .titulo-secao p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+.galeria-videos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.video-item {
+    overflow: hidden;
+    margin: 0;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-verde);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-conteudo {
+    padding: 20px;
+}
+
+.video-conteudo h3 {
+    margin: 0 0 10px;
+    color: var(--cor-verde);
+    font-size: 1.3rem;
+}
+
+.video-conteudo p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+.secao-videos .voltar-inicio {
+    margin-top: 35px;
+    text-align: center;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .galeria-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .videos-banner {
+        padding: 45px 15px;
+    }
+
+    .videos-banner h1 {
+        font-size: 2rem;
+    }
+
+    .secao-videos {
+        padding: 35px 0;
+    }
+
+    .galeria-videos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+/* Vídeos armazenados no próprio projeto */
+
+.video-item video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #000;
+}
+
+.video-item {
+    min-width: 0;
+}
+
+.video-conteudo {
+    padding: 20px;
+}
+
+.video-conteudo h3 {
+    margin: 0 0 10px;
+    color: var(--cor-verde);
+    font-size: 1.3rem;
+}
+
+.video-conteudo p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   PÁGINA DE COMPARATIVOS
+============================== */
+
+.comparativos-banner {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--cor-superficie),
+        var(--cor-fundo)
+    );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.comparativos-banner h1 {
+    margin: 15px 0;
+    color: var(--cor-laranja);
+    font-size: 2.8rem;
+}
+
+.comparativos-banner p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.comparativos-banner .destaque {
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.secao-comparativos {
+    padding: 50px 0;
+}
+
+.secao-comparativos .titulo-secao {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.secao-comparativos .titulo-secao h2 {
+    margin-bottom: 10px;
+    color: var(--cor-laranja);
+    font-size: 2rem;
+}
+
+.secao-comparativos .titulo-secao p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+/* Permite rolagem horizontal em telas pequenas */
+
+.tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 35px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+}
+
+.tabela-esportes {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    text-align: left;
+}
+
+.tabela-esportes caption {
+    padding: 15px;
+    color: var(--cor-texto-secundario);
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.tabela-esportes th,
+.tabela-esportes td {
+    padding: 16px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabela-esportes thead th {
+    background: var(--cor-superficie-clara);
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.tabela-esportes tbody th {
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.tabela-esportes tbody tr:last-child th,
+.tabela-esportes tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-esportes tbody tr:hover {
+    background: var(--cor-superficie-clara);
+}
+
+.bloco-comparativo {
+    margin-top: 25px;
+    padding: 25px;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-laranja);
+    border-radius: 8px;
+}
+
+.bloco-comparativo h2 {
+    margin: 0 0 12px;
+    color: var(--cor-laranja);
+    font-size: 1.4rem;
+}
+
+.bloco-comparativo p {
+    margin: 0;
+    color: var(--cor-texto-secundario);
+    line-height: 1.8;
+}
+
+.secao-comparativos .voltar-inicio {
+    margin-top: 35px;
+    text-align: center;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .comparativos-banner h1 {
+        font-size: 2.3rem;
+    }
+
+    .secao-comparativos {
+        padding: 35px 0;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .comparativos-banner {
+        padding: 45px 15px;
+    }
+
+    .comparativos-banner h1 {
+        font-size: 2rem;
+    }
+
+    .bloco-comparativo {
+        padding: 18px;
+    }
+
+    .bloco-comparativo h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==============================
+   PÁGINA SOBRE
+============================== */
+
+.sobre-banner {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--cor-superficie),
+        var(--cor-fundo)
+    );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.sobre-banner h1 {
+    margin: 15px 0;
+    color: var(--cor-laranja);
+    font-size: 2.8rem;
+}
+
+.sobre-banner p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.sobre-banner .destaque {
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.secao-sobre {
+    padding: 50px 0;
+}
+
+.sobre-bloco {
+    margin-bottom: 25px;
+    padding: 25px;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-laranja);
+    border-radius: 8px;
+}
+
+.sobre-bloco h2 {
+    margin: 0 0 15px;
+    color: var(--cor-laranja);
+    font-size: 1.5rem;
+}
+
+.sobre-bloco p {
+    margin: 0 0 15px;
+    color: var(--cor-texto-secundario);
+    line-height: 1.8;
+}
+
+.sobre-bloco p:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-lista {
+    padding-left: 25px;
+    color: var(--cor-texto-secundario);
+    line-height: 2;
+}
+
+.sobre-lista li::marker {
+    color: var(--cor-laranja);
+}
+
+.sobre-convite {
+    margin-top: 35px;
+    padding: 35px 25px;
+    text-align: center;
+    background: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+}
+
+.sobre-convite h2 {
+    margin: 0 0 15px;
+    color: var(--cor-laranja);
+}
+
+.sobre-convite p {
+    margin: 0 0 25px;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .sobre-banner {
+        padding: 45px 15px;
+    }
+
+    .sobre-banner h1 {
+        font-size: 2rem;
+    }
+
+    .secao-sobre {
+        padding: 35px 0;
+    }
+
+    .sobre-bloco {
+        padding: 20px;
+    }
+
+    .sobre-bloco h2 {
+        font-size: 1.3rem;
+    }
+
+    .sobre-convite {
+        padding: 25px 18px;
+    }
+}
+
+
+/* ==============================
+   PÁGINA DE FORMULÁRIO
+============================== */
+
+.formulario-banner {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--cor-superficie),
+        var(--cor-fundo)
+    );
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.formulario-banner h1 {
+    margin: 15px 0;
+    color: var(--cor-laranja);
+    font-size: 2.8rem;
+}
+
+.formulario-banner p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.formulario-banner .destaque {
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.secao-formulario {
+    padding: 50px 0;
+}
+
+.formulario-introducao {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.formulario-introducao h2 {
+    margin-bottom: 10px;
+    color: var(--cor-laranja);
+    font-size: 2rem;
+}
+
+.formulario-introducao p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.7;
+}
+
+.formulario-contato {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.campo-formulario label {
+    color: var(--cor-texto);
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font: inherit;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: var(--cor-texto-secundario);
+    opacity: 0.8;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: 2px solid var(--cor-laranja);
+    outline-offset: 2px;
+}
+
+.campo-formulario select option {
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.botoes-formulario button {
+    cursor: pointer;
+    font: inherit;
+}
+
+.botao-secundario {
+    color: var(--cor-texto);
+    background: var(--cor-superficie-clara);
+    border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-laranja);
+}
+
+.aviso-formulario {
+    max-width: 750px;
+    margin: 20px auto 0;
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.secao-formulario .voltar-inicio {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Adaptação para celulares */
+
+@media (max-width: 600px) {
+    .formulario-banner {
+        padding: 45px 15px;
+    }
+
+    .formulario-banner h1 {
+        font-size: 2rem;
+    }
+
+    .secao-formulario {
+        padding: 35px 0;
+    }
+
+    .formulario-contato {
+        padding: 20px;
+    }
+
+    .botoes-formulario {
+        flex-direction: column;
+    }
+
+    .botoes-formulario button {
+        width: 100%;
+    }
+}
+
+
+/* Agrupamentos do formulário */
+.formulario-contato fieldset {
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 18px;
+    margin: 24px 0;
+    min-width: 0;
+}
+
+.formulario-contato legend {
+    color: var(--cor-laranja);
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+.formulario-contato small {
+    display: block;
+    color: var(--cor-texto-secundario);
+    margin-top: 6px;
+    font-size: 0.875rem;
+}
+
+.formulario-contato input[type="radio"],
+.formulario-contato input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--cor-laranja);
+}
+
+.formulario-contato input[type="range"] {
+    accent-color: var(--cor-laranja);
+}
+
+.formulario-contato input[type="color"] {
+    width: 70px;
+    min-height: 45px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.formulario-contato input[type="file"] {
+    max-width: 100%;
+}
+
+.formulario-contato input:focus-visible,
+.formulario-contato select:focus-visible,
+.formulario-contato textarea:focus-visible,
+.formulario-contato button:focus-visible {
+    outline: 2px solid var(--cor-laranja);
+    outline-offset: 3px;
+}
+
+
+/* Correção do alinhamento dos radios e checkboxes */
+.formulario-contato fieldset .campo-formulario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.formulario-contato fieldset input[type="radio"],
+.formulario-contato fieldset input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.formulario-contato fieldset label {
+    display: inline;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Alinhamento definitivo das opções */
+.formulario-contato fieldset .campo-formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    text-align: left;
+}
+
+.formulario-contato fieldset .campo-formulario label {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    margin: 0;
+}
+
+.formulario-contato fieldset input[type="radio"],
+.formulario-contato fieldset input[type="checkbox"] {
+    display: inline-block;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Barra de preferência esportiva */
+.formulario-contato input[type="range"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    accent-color: var(--cor-laranja);
+}
+
+/* Perfil com foto circular */
+.perfil {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.perfil-foto {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    padding: 5px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00e5ff,
+        #0066ff,
+        #a100ff
+    );
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.5),
+        0 0 30px rgba(0, 102, 255, 0.3);
+
+    animation: brilho 3s ease-in-out infinite;
+    transition: transform 0.4s ease;
+}
+
+.perfil-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.perfil-foto:hover img {
+    transform: scale(1.04);
+}
+
+.perfil h2 {
+    margin-bottom: 10px;
+}
+
+.perfil p {
+    margin: 5px 0;
+}
+
+/* Animação de brilho */
+@keyframes brilho {
+    0%, 100% {
+        box-shadow:
+            0 0 12px rgba(0, 229, 255, 0.4),
+            0 0 25px rgba(0, 102, 255, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 22px rgba(0, 229, 255, 0.9),
+            0 0 40px rgba(161, 0, 255, 0.5);
+    }
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+    .perfil-foto {
+        width: 145px;
+        height: 145px;
+    }
+}
+
+
+/* Botão voltar ao topo */
+.voltar-topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--cor-laranja);
+
+    background-color: var(--cor-superficie);
+    color: var(--cor-laranja2);
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.voltar-topo:hover {
+    background-color: var(--cor-laranja2);
+    color: var(--cor-inicio);
+    transform: translateY(-4px);
+}
+
+.voltar-topo:focus-visible {
+    outline: 2px solid var(--cor-laranja2);
+    outline-offset: 4px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 480px) {
+    .voltar-topo {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+}
